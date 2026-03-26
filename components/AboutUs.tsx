@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 const features = [
   {
@@ -48,72 +52,91 @@ export default function AboutUs() {
     <section className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section label */}
-        <div className="mb-4 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-gray-800">
-          <span className="text-green-500">&#9632;</span>
-          ABOUT US
-          <span className="text-green-500">&#9632;</span>
-        </div>
+        <ScrollReveal>
+          <div className="mb-4 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-gray-800">
+            <span className="text-green-500">&#9632;</span>
+            ABOUT US
+            <span className="text-green-500">&#9632;</span>
+          </div>
 
-        {/* Main heading */}
-        <h2 className="font-heading mx-auto mb-14 text-center text-4xl font-black uppercase leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          SERVING ROOFS SINCE 1982
-        </h2>
+          {/* Main heading */}
+          <h2 className="font-heading mx-auto mb-14 text-center text-4xl font-black uppercase leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            SERVING ROOFS SINCE 1982
+          </h2>
+        </ScrollReveal>
 
         {/* Two-column layout */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left - Image with play button */}
-          <div className="relative overflow-hidden rounded-2xl">
-            <Image
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
-              alt="Aerial view of a roof"
-              width={800}
-              height={600}
-              className="h-auto w-full object-cover grayscale"
-            />
-            {/* Play button overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button
-                aria-label="Play video"
-                className="flex h-16 w-16 items-center justify-center bg-green-500 transition-transform hover:scale-110"
-              >
-                <svg className="ml-1 h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </button>
+          <ScrollReveal direction="right">
+            <div className="relative overflow-hidden rounded-2xl">
+              <Image
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+                alt="Aerial view of a roof"
+                width={800}
+                height={600}
+                className="h-auto w-full object-cover grayscale"
+              />
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <motion.div
+                  animate={{ scale: [1.0, 1.1, 1.0] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <button
+                    aria-label="Play video"
+                    className="flex h-16 w-16 items-center justify-center bg-green-500 transition-transform hover:scale-110"
+                  >
+                    <svg className="ml-1 h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+                </motion.div>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right - Text content */}
-          <div>
-            <p className="mb-8 text-base leading-relaxed text-gray-600 lg:text-lg">
-              What started as a small family operation has grown into one of the
-              most trusted roofing teams in town. We&apos;re not just contractors
-              - we&apos;re your neighbors.
-            </p>
+          <ScrollReveal direction="left">
+            <div>
+              <p className="mb-8 text-base leading-relaxed text-gray-600 lg:text-lg">
+                What started as a small family operation has grown into one of the
+                most trusted roofing teams in town. We&apos;re not just contractors
+                - we&apos;re your neighbors.
+              </p>
 
-            {/* Feature list */}
-            <div className="space-y-5">
-              {features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-700">
-                    {feature.icon}
-                  </div>
-                  <p className="text-sm leading-relaxed text-gray-600 pt-2">
-                    {feature.text}
-                  </p>
-                </div>
-              ))}
+              {/* Feature list */}
+              <div className="space-y-5">
+                {features.map((feature, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex items-start gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-700">
+                      {feature.icon}
+                    </div>
+                    <p className="text-sm leading-relaxed text-gray-600 pt-2">
+                      {feature.text}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA Button */}
+              <motion.a
+                href="#about"
+                className="mt-10 inline-flex items-center gap-2 bg-gray-900 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
+                whileHover={{ scale: 1.05 }}
+              >
+                KNOW MORE ABOUT US
+                <span className="text-lg leading-none">&rarr;</span>
+              </motion.a>
             </div>
-
-            {/* CTA Button */}
-            <a
-              href="#about"
-              className="mt-10 inline-flex items-center gap-2 bg-gray-900 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
-            >
-              KNOW MORE ABOUT US
-              <span className="text-lg leading-none">&rarr;</span>
-            </a>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

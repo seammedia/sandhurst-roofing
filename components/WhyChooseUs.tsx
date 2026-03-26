@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const features = [
   {
@@ -67,42 +71,55 @@ const stats = [
   },
 ];
 
+const statVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" as const },
+  },
+};
+
 export default function WhyChooseUs() {
   return (
     <>
       {/* Why Choose Us - White section */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Section label */}
-          <div className="mb-4 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-gray-800">
-            <span className="text-green-500">&#9632;</span>
-            WHY CHOOSE ROOFERIO
-            <span className="text-green-500">&#9632;</span>
-          </div>
+          {/* Section label + heading */}
+          <ScrollReveal>
+            <div className="mb-4 flex items-center justify-center gap-3 text-sm font-semibold uppercase tracking-widest text-gray-800">
+              <span className="text-green-500">&#9632;</span>
+              WHY CHOOSE ROOFERIO
+              <span className="text-green-500">&#9632;</span>
+            </div>
 
-          {/* Main heading */}
-          <h2 className="font-heading mx-auto mb-12 max-w-4xl text-center text-4xl font-black uppercase leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-            BECAUSE YOUR ROOF DESERVES BETTER THAN &apos;GOOD ENOUGH&apos;
-          </h2>
+            <h2 className="font-heading mx-auto mb-12 max-w-4xl text-center text-4xl font-black uppercase leading-tight tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              BECAUSE YOUR ROOF DESERVES BETTER THAN &apos;GOOD ENOUGH&apos;
+            </h2>
+          </ScrollReveal>
 
           {/* Gray card with feature grid */}
           <div className="rounded-2xl bg-[#f5f5f5] p-6 sm:p-10 lg:p-14">
-            <div className="grid gap-6 sm:grid-cols-2 lg:gap-10">
+            <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:gap-10">
               {features.map((feature) => (
-                <div key={feature.title} className="rounded-xl bg-white p-6 sm:p-8">
-                  <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-gray-100 p-3 text-gray-800">
-                    {feature.icon}
+                <StaggerItem key={feature.title}>
+                  <div className="rounded-xl bg-white p-6 sm:p-8">
+                    <div className="mb-4 inline-flex items-center justify-center rounded-lg bg-gray-100 p-3 text-gray-800">
+                      {feature.icon}
+                    </div>
+                    <h3 className="font-heading text-lg font-bold uppercase tracking-tight text-gray-900">
+                      {feature.title}
+                    </h3>
+                    <hr className="my-3 border-gray-200" />
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      {feature.desc}
+                    </p>
                   </div>
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-tight text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <hr className="my-3 border-gray-200" />
-                  <p className="text-sm leading-relaxed text-gray-600">
-                    {feature.desc}
-                  </p>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </div>
       </section>
@@ -122,9 +139,24 @@ export default function WhyChooseUs() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-          <div className="grid gap-12 sm:grid-cols-2 lg:gap-16">
+          <motion.div
+            className="grid gap-12 sm:grid-cols-2 lg:gap-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.15 },
+              },
+            }}
+          >
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
+              <motion.div
+                key={stat.label}
+                className="text-center sm:text-left"
+                variants={statVariants}
+              >
                 <div className="font-heading text-7xl font-black leading-none tracking-tight text-white lg:text-8xl">
                   {stat.number}
                   <span className="text-green-500">{stat.suffix}</span>
@@ -135,9 +167,9 @@ export default function WhyChooseUs() {
                 <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-400">
                   {stat.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

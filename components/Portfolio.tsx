@@ -1,106 +1,77 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 const portfolioImages = [
   {
-    src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=500&fit=crop",
     alt: "House roof project 1",
   },
   {
-    src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=500&fit=crop",
     alt: "House roof project 2",
   },
   {
-    src: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&h=500&fit=crop",
     alt: "House roof project 3",
   },
   {
-    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=500&fit=crop",
     alt: "House roof project 4",
   },
   {
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=500&fit=crop",
     alt: "House roof project 5",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=500&fit=crop",
     alt: "House roof project 6",
   },
   {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=500&fit=crop",
     alt: "House roof project 7",
   },
   {
-    src: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=400&h=500&fit=crop",
     alt: "House roof project 8",
   },
   {
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=350&fit=crop",
+    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=500&fit=crop",
     alt: "House roof project 9",
   },
 ];
 
-const ANGLE_PER_IMAGE = 20;
-const TRANSLATE_Z = 600;
+// Define transforms for each image position to create the concave arc
+// Index 0 and 8 are the outer edges (large, angled inward)
+// Index 4 is the center (standard, facing forward)
+const imageTransforms = [
+  { rotateY: 35, height: 400, translateZ: -60, scale: 1.05 },
+  { rotateY: 25, height: 380, translateZ: -40, scale: 1.0 },
+  { rotateY: 16, height: 340, translateZ: -20, scale: 0.95 },
+  { rotateY: 8, height: 310, translateZ: -10, scale: 0.92 },
+  { rotateY: 0, height: 330, translateZ: 0, scale: 0.9 },
+  { rotateY: -8, height: 310, translateZ: -10, scale: 0.92 },
+  { rotateY: -16, height: 340, translateZ: -20, scale: 0.95 },
+  { rotateY: -25, height: 380, translateZ: -40, scale: 1.0 },
+  { rotateY: -35, height: 400, translateZ: -60, scale: 1.05 },
+];
 
 export default function Portfolio() {
-  const [rotation, setRotation] = useState(0);
-  const isDragging = useRef(false);
-  const lastX = useRef(0);
+  const x = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 300, damping: 40 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<number | null>(null);
-  const velocityRef = useRef(0);
-
-  const centerIndex = Math.floor(portfolioImages.length / 2);
-  const initialRotation = 0;
-
-  const handlePointerDown = useCallback((e: React.PointerEvent) => {
-    isDragging.current = true;
-    lastX.current = e.clientX;
-    velocityRef.current = 0;
-    if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current);
-      animationRef.current = null;
-    }
-    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
-  }, []);
-
-  const handlePointerMove = useCallback(
-    (e: React.PointerEvent) => {
-      if (!isDragging.current) return;
-      const dx = e.clientX - lastX.current;
-      velocityRef.current = dx * 0.15;
-      setRotation((prev) => prev + dx * 0.15);
-      lastX.current = e.clientX;
-    },
-    []
-  );
-
-  const handlePointerUp = useCallback(() => {
-    isDragging.current = false;
-
-    const decelerate = () => {
-      velocityRef.current *= 0.95;
-      if (Math.abs(velocityRef.current) < 0.05) {
-        velocityRef.current = 0;
-        animationRef.current = null;
-        return;
-      }
-      setRotation((prev) => prev + velocityRef.current);
-      animationRef.current = requestAnimationFrame(decelerate);
-    };
-
-    animationRef.current = requestAnimationFrame(decelerate);
-  }, []);
+  const [dragConstraints, setDragConstraints] = useState({ left: -800, right: 800 });
 
   useEffect(() => {
-    return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
+    if (containerRef.current) {
+      const containerWidth = containerRef.current.scrollWidth;
+      const viewportWidth = window.innerWidth;
+      const overflow = (containerWidth - viewportWidth) / 2 + 100;
+      setDragConstraints({ left: -overflow, right: overflow });
+    }
   }, []);
 
   return (
@@ -119,96 +90,106 @@ export default function Portfolio() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Label */}
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="text-green-500 text-xs">&#9632;</span>
-          <span className="text-sm tracking-widest text-gray-500 uppercase">
-            Our Portfolio
-          </span>
-          <span className="text-green-500 text-xs">&#9632;</span>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-green-500 text-xs">&#9632;</span>
+            <span className="text-sm tracking-widest text-gray-500 uppercase">
+              Our Portfolio
+            </span>
+            <span className="text-green-500 text-xs">&#9632;</span>
+          </div>
+        </ScrollReveal>
 
         {/* Heading */}
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center uppercase mb-10">
-          A Look At What We&apos;ve Nailed
-        </h2>
+        <ScrollReveal delay={0.1}>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-center uppercase mb-10">
+            A Look At What We&apos;ve Nailed
+          </h2>
+        </ScrollReveal>
 
         {/* Buttons */}
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
-            View Projects
-            <span className="text-lg leading-none">&gt;</span>
-          </button>
-          <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
-            View Gallery
-            <span className="text-lg leading-none">&gt;</span>
-          </button>
-        </div>
+        <ScrollReveal delay={0.2}>
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
+              View Projects
+              <span className="text-lg leading-none">&gt;</span>
+            </button>
+            <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
+              View Gallery
+              <span className="text-lg leading-none">&gt;</span>
+            </button>
+          </div>
+        </ScrollReveal>
       </div>
 
-      {/* 3D Carousel */}
-      <div className="relative w-full" style={{ height: "420px" }}>
+      {/* 3D Arc Gallery */}
+      <div className="relative w-full" style={{ height: "480px" }}>
         {/* Drag indicator */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
-          <span className="inline-block bg-green-500 text-black text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full select-none">
+          <span className="inline-block bg-green-500 text-black text-xs font-bold tracking-widest uppercase px-5 py-1.5 rounded-full select-none">
             Drag &gt;&gt;&gt;
           </span>
         </div>
 
         <div
-          ref={containerRef}
-          className="relative w-full h-full cursor-grab active:cursor-grabbing select-none"
-          style={{ perspective: "1200px" }}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
+          className="relative w-full h-full overflow-visible"
+          style={{ perspective: "1000px" }}
         >
-          <div
-            className="absolute left-1/2 top-1/2 w-0 h-0"
+          <motion.div
+            ref={containerRef}
+            className="flex items-end justify-center gap-3 cursor-grab active:cursor-grabbing select-none px-8"
             style={{
+              x: springX,
               transformStyle: "preserve-3d",
-              transform: `translateY(-50%) rotateY(${rotation}deg)`,
+              paddingTop: "40px",
+              paddingBottom: "100px",
+            }}
+            drag="x"
+            dragConstraints={dragConstraints}
+            dragElastic={0.1}
+            onDrag={(_, info) => {
+              x.set(info.offset.x);
             }}
           >
             {portfolioImages.map((img, index) => {
-              const angle = (index - centerIndex) * ANGLE_PER_IMAGE;
+              const t = imageTransforms[index];
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="absolute rounded-xl overflow-hidden shadow-2xl"
+                  className="relative flex-shrink-0 rounded-xl overflow-hidden shadow-2xl"
                   style={{
-                    width: "300px",
-                    height: "240px",
-                    left: "-150px",
-                    top: "-120px",
-                    transform: `rotateY(${angle}deg) translateZ(${TRANSLATE_Z}px)`,
-                    backfaceVisibility: "hidden",
+                    width: "260px",
+                    height: `${t.height}px`,
+                    transform: `perspective(1000px) rotateY(${t.rotateY}deg) translateZ(${t.translateZ}px) scale(${t.scale})`,
+                    transformOrigin: "center bottom",
                   }}
+                  whileHover={{ scale: t.scale * 1.03 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
                     className="object-cover pointer-events-none"
-                    sizes="300px"
+                    sizes="260px"
                     draggable={false}
                   />
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         {/* White curved arc overlay at bottom */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
           <svg
-            className="relative block w-full h-[100px]"
-            viewBox="0 0 1440 100"
+            className="relative block w-full h-[120px]"
+            viewBox="0 0 1440 120"
             preserveAspectRatio="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M0,100 L0,40 Q720,0 1440,40 L1440,100 Z"
+              d="M0,120 L0,50 Q720,0 1440,50 L1440,120 Z"
               fill="white"
             />
           </svg>

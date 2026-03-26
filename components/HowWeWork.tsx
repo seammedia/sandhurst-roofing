@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
+
 const steps = [
   {
     number: 1,
@@ -98,68 +103,73 @@ export default function HowWeWork() {
     <section className="bg-[#f5f5f5] py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Section Label */}
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-green-500 text-xs">&#9632;</span>
-          <span className="text-sm tracking-widest text-gray-500 uppercase">
-            How We Work
-          </span>
-          <span className="text-green-500 text-xs">&#9632;</span>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-green-500 text-xs">&#9632;</span>
+            <span className="text-sm tracking-widest text-gray-500 uppercase">
+              How We Work
+            </span>
+            <span className="text-green-500 text-xs">&#9632;</span>
+          </div>
 
-        {/* Heading */}
-        <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl uppercase mb-12">
-          Here&apos;s How We Make
-          <br />
-          Roofing Easy-Peasy
-        </h2>
+          {/* Heading */}
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl uppercase mb-12">
+            Here&apos;s How We Make
+            <br />
+            Roofing Easy-Peasy
+          </h2>
+        </ScrollReveal>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.15}>
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className={`rounded-lg p-6 flex flex-col justify-between min-h-[280px] ${
-                step.active
-                  ? "bg-green-500 text-gray-900"
-                  : "bg-white text-gray-900"
-              }`}
-            >
-              <div>
-                {/* Icon */}
-                <div
-                  className={`mb-5 ${
-                    step.active ? "text-gray-900" : "text-green-500"
-                  }`}
-                >
-                  {step.icon}
+            <StaggerItem key={step.number}>
+              <motion.div
+                className={`rounded-lg p-6 flex flex-col justify-between min-h-[280px] ${
+                  step.active
+                    ? "bg-green-500 text-gray-900"
+                    : "bg-white text-gray-900"
+                }`}
+                whileHover={{ y: -5, boxShadow: "0 10px 40px rgba(0,0,0,0.12)" }}
+                transition={{ duration: 0.2 }}
+              >
+                <div>
+                  {/* Icon */}
+                  <div
+                    className={`mb-5 ${
+                      step.active ? "text-gray-900" : "text-green-500"
+                    }`}
+                  >
+                    {step.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="font-bold text-sm uppercase mb-3 leading-snug">
+                    {step.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      step.active ? "text-gray-800" : "text-gray-500"
+                    }`}
+                  >
+                    {step.description}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-bold text-sm uppercase mb-3 leading-snug">
-                  {step.title}
-                </h3>
-
-                {/* Description */}
+                {/* Step Label */}
                 <p
-                  className={`text-sm leading-relaxed ${
-                    step.active ? "text-gray-800" : "text-gray-500"
+                  className={`text-xs uppercase tracking-wider mt-6 font-semibold ${
+                    step.active ? "text-gray-800" : "text-gray-400"
                   }`}
                 >
-                  {step.description}
+                  Step {step.number}
                 </p>
-              </div>
-
-              {/* Step Label */}
-              <p
-                className={`text-xs uppercase tracking-wider mt-6 font-semibold ${
-                  step.active ? "text-gray-800" : "text-gray-400"
-                }`}
-              >
-                Step {step.number}
-              </p>
-            </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

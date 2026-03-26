@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const navLinks = [
   { label: "ABOUT", href: "#about" },
@@ -64,7 +65,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="flex items-center gap-1 text-sm font-medium uppercase tracking-wide text-gray-800 transition-colors hover:text-green-600"
+                className="group relative flex items-center gap-1 text-sm font-medium uppercase tracking-wide text-gray-800 transition-colors hover:text-green-600"
               >
                 {link.label}
                 {link.hasDropdown && (
@@ -82,19 +83,27 @@ export default function Navbar() {
                     />
                   </svg>
                 )}
+                {/* Hover underline */}
+                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-green-500 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
           </div>
 
           {/* CTA + Hamburger */}
           <div className="flex items-center gap-4">
-            <Link
-              href="#quote"
-              className="hidden items-center gap-2 bg-black px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-gray-900 sm:flex"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="hidden sm:flex"
             >
-              FREE QUOTE
-              <span className="text-base leading-none">&gt;</span>
-            </Link>
+              <Link
+                href="#quote"
+                className="flex items-center gap-2 bg-black px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-gray-900"
+              >
+                FREE QUOTE
+                <span className="text-base leading-none">&gt;</span>
+              </Link>
+            </motion.div>
 
             {/* Mobile hamburger */}
             <button

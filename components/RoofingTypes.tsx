@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const roofingTypes = [
   {
@@ -35,59 +39,68 @@ export default function RoofingTypes() {
     <section className="bg-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section Label */}
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <span className="text-green-500">&#9632;</span>
-          <span className="text-sm font-semibold tracking-widest uppercase">
-            Roofing Types
-          </span>
-          <span className="text-green-500">&#9632;</span>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className="text-green-500">&#9632;</span>
+            <span className="text-sm font-semibold tracking-widest uppercase">
+              Roofing Types
+            </span>
+            <span className="text-green-500">&#9632;</span>
+          </div>
 
-        {/* Main Heading */}
-        <h2 className="font-heading text-3xl md:text-5xl text-center uppercase mb-12">
-          SHINGLE? METAL? TILE? LET&apos;S FIND YOUR MATCH
-        </h2>
+          {/* Main Heading */}
+          <h2 className="font-heading text-3xl md:text-5xl text-center uppercase mb-12">
+            SHINGLE? METAL? TILE? LET&apos;S FIND YOUR MATCH
+          </h2>
+        </ScrollReveal>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {roofingTypes.map((type) => (
-            <div
-              key={type.title}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="relative w-full h-56">
-                <Image
-                  src={type.image}
-                  alt={type.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg uppercase mb-2">
-                  {type.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{type.description}</p>
-                <div className="border-t border-gray-200 pt-4 flex justify-between text-sm">
-                  <div>
-                    <span className="text-gray-500">Lifespan</span>
-                    <p className="font-semibold">{type.lifespan}</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-gray-500">Price</span>
-                    <p className="font-semibold">{type.price}</p>
+            <StaggerItem key={type.title}>
+              <motion.div
+                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+                transition={{ duration: 0.3 }}
+                className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+              >
+                <div className="relative w-full h-56">
+                  <Image
+                    src={type.image}
+                    alt={type.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-bold text-lg uppercase mb-2">
+                    {type.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">{type.description}</p>
+                  <div className="border-t border-gray-200 pt-4 flex justify-between text-sm">
+                    <div>
+                      <span className="text-gray-500">Lifespan</span>
+                      <p className="font-semibold">{type.lifespan}</p>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-gray-500">Price</span>
+                      <p className="font-semibold">{type.price}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Button */}
         <div className="text-center">
-          <button className="bg-black text-white px-8 py-3 font-semibold uppercase tracking-wide hover:bg-gray-800 transition-colors">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+            className="bg-black text-white px-8 py-3 font-semibold uppercase tracking-wide hover:bg-gray-800 transition-colors"
+          >
             VIEW ALL TYPES
-          </button>
+          </motion.button>
         </div>
       </div>
     </section>

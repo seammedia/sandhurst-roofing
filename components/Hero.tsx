@@ -125,7 +125,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1600&h=600&fit=crop"
+          src="/images/wp/2018/08/Roof-Restoration-pic5.jpg"
           alt="Professional roofers working on a roof"
           width={1600}
           height={600}

@@ -6,22 +6,19 @@ import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const blogPosts = [
   {
-    image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop",
+    image: "/images/wp/2020/06/Full-roof-restoration-with-red-cement-tiles.png",
     tag: "Tips",
     date: "June 22, 2025",
     title: "7 Easy Ways to Make Your Roof Last Longer",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
+    image: "/images/wp/2023/10/roof-inspection-img.jpg",
     tag: "Guides",
     date: "July 5, 2025",
     title: "Choosing the Right Roofing Material: A Homeowner's Simple Guide",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1632759145351-1d592919f522?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/Roof-Restoration-pic3-e1532571064655.jpg",
     tag: "Advice",
     date: "July 15, 2025",
     title: "Roof Repair vs. Replacement: How to Make the Right Call",

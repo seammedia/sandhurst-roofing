@@ -10,42 +10,36 @@ const services = [
     title: "ROOF INSTALLATION",
     description:
       "Built strong from the start — because a solid roof starts with a solid install.",
-    image:
-      "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/Roof-Restoration-pic1.jpg",
   },
   {
     title: "ROOF REPAIR",
     description:
       "Leaks, cracks, or storm damage? We patch it up before it gets worse.",
-    image:
-      "https://images.unsplash.com/photo-1632759145351-1d592919f522?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/roof-repairs-pic3.jpg",
   },
   {
     title: "ROOF REPLACEMENT",
     description:
       "Out with the old, in with something way better (and leak-free).",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+    image: "/images/wp/2022/02/Reroof-Parkdale-after-image.jpg",
   },
   {
     title: "ROOF INSPECTIONS",
     description:
       "Spot problems early, fix them fast, and keep your roof happy.",
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/Roof-Restoration-pic4-e1532571077281.jpg",
   },
   {
     title: "ROOF COATING",
     description: "It's like sunscreen... but for your roof.",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/10/roof-painting-and-re-pointing.jpg",
   },
   {
     title: "COMMERCIAL ROOFING",
     description:
       "From the ground up to the top of the roof — we've got you covered.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/05/Colorbond-Roofing-pic1.jpg",
   },
 ];
 

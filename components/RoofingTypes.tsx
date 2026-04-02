@@ -7,8 +7,7 @@ import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 const roofingTypes = [
   {
     title: "ASPHALT SHINGLE",
-    image:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/Colorbond-Roofing-pic1.jpg",
     description:
       "Affordable, reliable, and made to handle the heat (and the hail).",
     lifespan: "15-30 years",
@@ -16,8 +15,7 @@ const roofingTypes = [
   },
   {
     title: "CLAY TILE",
-    image:
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/04/Terracotta-Tile-Roof-pic1-e1522887256963.jpg",
     description:
       "Timeless elegance, unbeatable heat resistance, extreme durability.",
     lifespan: "50-100+ years",
@@ -25,8 +23,7 @@ const roofingTypes = [
   },
   {
     title: "CONCRETE TILE",
-    image:
-      "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=400&h=300&fit=crop",
+    image: "/images/wp/2018/07/cement-tiles-pic1-e1532573899902.jpg",
     description:
       "Stylish, tough, and made to mimic high-end without the high cost.",
     lifespan: "40-75 years",

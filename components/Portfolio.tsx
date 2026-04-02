@@ -7,40 +7,40 @@ import ScrollReveal from "./ScrollReveal";
 
 const portfolioImages = [
   {
-    src: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=500&fit=crop",
-    alt: "House roof project 1",
+    src: "/images/wp/2018/04/Before-and-After1-e1523846046607.jpg",
+    alt: "Before and after roof project 1",
   },
   {
-    src: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=500&fit=crop",
-    alt: "House roof project 2",
+    src: "/images/wp/2018/04/Roof-replacement-after1-e1523845065441.jpg",
+    alt: "Roof replacement completed",
   },
   {
-    src: "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=400&h=500&fit=crop",
-    alt: "House roof project 3",
+    src: "/images/wp/2018/08/Roof-Restoration-pic5.jpg",
+    alt: "Roofer working on roof restoration",
   },
   {
-    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=500&fit=crop",
-    alt: "House roof project 4",
+    src: "/images/wp/2018/01/IMG_3365.png",
+    alt: "Roofing job site",
   },
   {
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=500&fit=crop",
-    alt: "House roof project 5",
+    src: "/images/wp/2022/02/Reroof-Parkdale-after-image.jpg",
+    alt: "Reroof Parkdale completed project",
   },
   {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=500&fit=crop",
-    alt: "House roof project 6",
+    src: "/images/wp/2018/04/Before-and-After2-e1523846166898.jpg",
+    alt: "Before and after roof project 2",
   },
   {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=500&fit=crop",
-    alt: "House roof project 7",
+    src: "/images/wp/2018/01/IMG_3474.jpg",
+    alt: "Roofing project in progress",
   },
   {
-    src: "https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=400&h=500&fit=crop",
-    alt: "House roof project 8",
+    src: "/images/wp/2018/07/Roof-replacement-Before-and-After3-e1532574721891.jpg",
+    alt: "Roof replacement before and after",
   },
   {
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=500&fit=crop",
-    alt: "House roof project 9",
+    src: "/images/wp/2018/04/Before-and-After3-e1523846145509.jpg",
+    alt: "Before and after roof project 3",
   },
 ];
 

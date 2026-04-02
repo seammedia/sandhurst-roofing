@@ -71,7 +71,7 @@ export default function AboutUs() {
           <ScrollReveal direction="right">
             <div className="relative overflow-hidden rounded-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+                src="/images/wp/2018/04/sandhurst-roofing-about-us.jpg"
                 alt="Aerial view of a roof"
                 width={800}
                 height={600}

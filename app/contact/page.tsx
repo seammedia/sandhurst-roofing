@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { submitContactForm } from "@/app/actions/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Sandhurst Roofing",
+  title: "Contact Us | Get In Touch With The Sandhurst Roofing Team",
   description:
-    "Contact Sandhurst Roofing for a free roofing quote. Call 0448 812 800 or fill out our contact form. Servicing Frankston, Mornington Peninsula, and surrounding areas.",
+    "Contact Sandhurst Roofing today. For all your roof restoration, repair and replacement needs, call the team at Sandhurst Roofing.",
 };
 
 export default function ContactPage() {
@@ -159,7 +160,30 @@ export default function ContactPage() {
                 <h2 className="font-heading mb-6 text-2xl uppercase">
                   Request a Free Quote
                 </h2>
-                <form className="space-y-5">
+                <form action={submitContactForm} className="space-y-5">
+                  {/* Honeypot field - hidden from real users, bots fill it in.
+                      Submissions with a non-empty `website` field are silently dropped server-side. */}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      width: "1px",
+                      height: "1px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <label htmlFor="website">
+                      Website (leave this empty)
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </label>
+                  </div>
                   <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                       <label

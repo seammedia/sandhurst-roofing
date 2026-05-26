@@ -14,7 +14,7 @@ import {
 import { sanitizeHtml } from "@/lib/sanitize";
 
 // Pages that have their own dedicated routes - skip them here
-const RESERVED_SLUGS = ["blog", "faq", "contact"];
+const RESERVED_SLUGS = ["blog", "faq", "contact", "thank-you"];
 
 type PageContent = {
   title: string;
@@ -58,7 +58,7 @@ export async function generateStaticParams() {
   const serviceSlugs = siteData.services.map((s) => ({ slug: s.slug }));
   const locationSlugs = siteData.locations.map((l) => ({ slug: l.slug }));
 
-  // Add core pages (excluding reserved ones)
+  // Add core pages (excluding reserved ones that have dedicated routes)
   const corePages = [
     "about-us",
     "colorbond-colour-chart",
@@ -69,7 +69,6 @@ export async function generateStaticParams() {
     "recent-jobs",
     "reviews",
     "service-areas",
-    "thank-you",
   ].map((slug) => ({ slug }));
 
   return [...serviceSlugs, ...locationSlugs, ...corePages];

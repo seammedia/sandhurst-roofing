@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { submitContactForm } from "@/app/actions/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Get In Touch With The Sandhurst Roofing Team",
+  title: "Contact Us | Get a Free Roofing Quote",
   description:
     "Contact Sandhurst Roofing today. For all your roof restoration, repair and replacement needs, call the team at Sandhurst Roofing.",
   alternates: {

@@ -10,7 +10,7 @@ import ScrollReveal, {
 import { getAllPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Roofing Blog | Tips & Advice | Sandhurst Roofing",
+  title: "Roofing Blog | Tips & Advice",
   description:
     "Read our latest roofing tips, advice, and industry insights. Learn about roof restoration, repairs, and maintenance from Melbourne's trusted roofers.",
   alternates: {

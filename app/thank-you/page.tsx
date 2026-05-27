@@ -26,7 +26,7 @@ const CONVERSION_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_ID;
 const CONVERSION_LABEL = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
 
 export const metadata: Metadata = {
-  title: "Thank You For Your Roofing Enquiry | Sandhurst Roofing",
+  title: "Thank You For Your Roofing Enquiry",
   description:
     "We appreciate that you've taken this opportunity to seek out our services regarding your roofing needs. We'll be in touch soon. Sandhurst Roofing",
   robots: {

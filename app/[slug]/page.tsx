@@ -66,9 +66,11 @@ export async function generateStaticParams() {
     "colour-visualisation-tool",
     "covid-19",
     "home",
+    "privacy-policy",
     "recent-jobs",
     "reviews",
     "service-areas",
+    "terms",
   ].map((slug) => ({ slug }));
 
   return [...serviceSlugs, ...locationSlugs, ...corePages];

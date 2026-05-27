@@ -35,9 +35,11 @@ export const metadata: Metadata = {
     "roof painting",
     "roof plumber Melbourne",
   ],
-  alternates: {
-    canonical: "/",
-  },
+  // NOTE: do NOT set a default `alternates.canonical` here. When set in the
+  // root layout, every page inherits it (Next.js doesn't have a sensible
+  // page-specific fallback for canonicals), which causes all inner pages to
+  // report the homepage as their canonical URL — catastrophic for SEO.
+  // Each page (`page.tsx` / `generateMetadata`) must set its own canonical.
   openGraph: {
     type: "website",
     locale: "en_AU",

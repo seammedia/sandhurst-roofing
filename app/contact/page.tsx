@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Contact Us | Get In Touch With The Sandhurst Roofing Team",
   description:
     "Contact Sandhurst Roofing today. For all your roof restoration, repair and replacement needs, call the team at Sandhurst Roofing.",
+  alternates: {
+    canonical: "/contact/",
+  },
 };
 
 export default function ContactPage() {

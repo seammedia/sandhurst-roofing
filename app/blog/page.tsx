@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Roofing Blog | Tips & Advice | Sandhurst Roofing",
   description:
     "Read our latest roofing tips, advice, and industry insights. Learn about roof restoration, repairs, and maintenance from Melbourne's trusted roofers.",
+  alternates: {
+    canonical: "/blog/",
+  },
 };
 
 export default function BlogPage() {

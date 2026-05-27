@@ -9,6 +9,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: page.seoTitle || page.title,
     description: page.seoDescription || "",
+    alternates: {
+      canonical: "/faq/",
+    },
   };
 }
 

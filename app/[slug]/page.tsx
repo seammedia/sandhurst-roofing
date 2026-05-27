@@ -93,6 +93,9 @@ export async function generateMetadata({
   return {
     title: content.seoTitle || content.title,
     description: content.seoDescription || "",
+    alternates: {
+      canonical: `/${slug}/`,
+    },
   };
 }
 

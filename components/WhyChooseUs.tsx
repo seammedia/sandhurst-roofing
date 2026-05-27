@@ -64,7 +64,7 @@ const stats = [
     desc: "Fast, reliable, and leak-proof - just how roof repairs should be.",
   },
   {
-    number: "4.2",
+    number: "5",
     suffix: "-star",
     label: "AVERAGE RATING",
     desc: "Across Google, Facebook, and Yelp - customers love us.",

@@ -77,22 +77,6 @@ export default function AboutUs() {
                 height={600}
                 className="h-auto w-full object-cover grayscale"
               />
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: [1.0, 1.1, 1.0] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <button
-                    aria-label="Play video"
-                    className="flex h-16 w-16 items-center justify-center bg-green-500 transition-transform hover:scale-110"
-                  >
-                    <svg className="ml-1 h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </button>
-                </motion.div>
-              </div>
             </div>
           </ScrollReveal>
 
@@ -128,7 +112,7 @@ export default function AboutUs() {
 
               {/* CTA Button */}
               <motion.a
-                href="#about"
+                href="/about-us/"
                 className="mt-10 inline-flex items-center gap-2 bg-gray-900 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-gray-800"
                 whileHover={{ scale: 1.05 }}
               >

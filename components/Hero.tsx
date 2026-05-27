@@ -72,7 +72,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <motion.a
-              href="#quote"
+              href="/contact/"
               className="inline-flex items-center gap-2 bg-green-500 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-green-600"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}

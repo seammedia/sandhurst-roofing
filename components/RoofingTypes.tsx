@@ -1,33 +1,34 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 
 const roofingTypes = [
   {
-    title: "ASPHALT SHINGLE",
+    title: "COLORBOND® STEEL",
     image: "/images/wp/2018/07/Colorbond-Roofing-pic1.jpg",
     description:
-      "Affordable, reliable, and made to handle the heat (and the hail).",
-    lifespan: "15-30 years",
-    price: "$3.50-$5.50/sq. ft.",
+      "Lightweight, weather-tough, and Australia's most-trusted roofing steel.",
+    lifespan: "30-50+ years",
+    href: "/colorbond-roofing/",
   },
   {
-    title: "CLAY TILE",
+    title: "TERRACOTTA TILE",
     image: "/images/wp/2018/04/Terracotta-Tile-Roof-pic1-e1522887256963.jpg",
     description:
       "Timeless elegance, unbeatable heat resistance, extreme durability.",
     lifespan: "50-100+ years",
-    price: "$10.00-$18.00/sq. ft.",
+    href: "/terracotta-tiles/",
   },
   {
-    title: "CONCRETE TILE",
+    title: "CEMENT TILE",
     image: "/images/wp/2018/07/cement-tiles-pic1-e1532573899902.jpg",
     description:
       "Stylish, tough, and made to mimic high-end without the high cost.",
     lifespan: "40-75 years",
-    price: "$8.00-$12.00/sq. ft.",
+    href: "/cement-tiles/",
   },
 ];
 
@@ -47,7 +48,7 @@ export default function RoofingTypes() {
 
           {/* Main Heading */}
           <h2 className="font-heading text-3xl md:text-5xl text-center uppercase mb-12">
-            SHINGLE? METAL? TILE? LET&apos;S FIND YOUR MATCH
+            COLORBOND? TERRACOTTA? CEMENT? LET&apos;S FIND YOUR MATCH
           </h2>
         </ScrollReveal>
 
@@ -55,49 +56,51 @@ export default function RoofingTypes() {
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {roofingTypes.map((type) => (
             <StaggerItem key={type.title}>
-              <motion.div
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
-                transition={{ duration: 0.3 }}
-                className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm"
-              >
-                <div className="relative w-full h-56">
-                  <Image
-                    src={type.image}
-                    alt={type.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-lg uppercase mb-2">
-                    {type.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">{type.description}</p>
-                  <div className="border-t border-gray-200 pt-4 flex justify-between text-sm">
-                    <div>
-                      <span className="text-gray-500">Lifespan</span>
-                      <p className="font-semibold">{type.lifespan}</p>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-gray-500">Price</span>
-                      <p className="font-semibold">{type.price}</p>
+              <Link href={type.href} className="block h-full">
+                <motion.div
+                  whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.12)" }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm h-full cursor-pointer"
+                >
+                  <div className="relative w-full h-56">
+                    <Image
+                      src={type.image}
+                      alt={type.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg uppercase mb-2">
+                      {type.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{type.description}</p>
+                    <div className="border-t border-gray-200 pt-4 flex justify-between text-sm">
+                      <div>
+                        <span className="text-gray-500">Lifespan</span>
+                        <p className="font-semibold">{type.lifespan}</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-green-600 font-semibold uppercase tracking-wider text-xs">
+                          Learn more &rarr;
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
         {/* Button */}
         <div className="text-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            className="bg-black text-white px-8 py-3 font-semibold uppercase tracking-wide hover:bg-gray-800 transition-colors"
+          <Link
+            href="/recent-jobs/"
+            className="inline-block bg-black text-white px-8 py-3 font-semibold uppercase tracking-wide hover:bg-gray-800 transition-colors"
           >
-            VIEW ALL TYPES
-          </motion.button>
+            SEE OUR RECENT WORK
+          </Link>
         </div>
       </div>
     </section>

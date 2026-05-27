@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
@@ -110,14 +111,20 @@ export default function Portfolio() {
         {/* Buttons */}
         <ScrollReveal delay={0.2}>
           <div className="flex items-center justify-center gap-4 mb-12">
-            <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
+            <Link
+              href="/recent-jobs/"
+              className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors"
+            >
               View Projects
               <span className="text-lg leading-none">&gt;</span>
-            </button>
-            <button className="flex items-center gap-2 bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors">
-              View Gallery
+            </Link>
+            <Link
+              href="/contact/"
+              className="flex items-center gap-2 bg-green-500 text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-green-600 transition-colors"
+            >
+              Get A Quote
               <span className="text-lg leading-none">&gt;</span>
-            </button>
+            </Link>
           </div>
         </ScrollReveal>
       </div>

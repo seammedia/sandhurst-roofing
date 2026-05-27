@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "./ScrollReveal";
 import { useState } from "react";
@@ -11,35 +12,41 @@ const services = [
     description:
       "Built strong from the start — because a solid roof starts with a solid install.",
     image: "/images/wp/2018/07/Roof-Restoration-pic1.jpg",
+    href: "/re-roofing/",
   },
   {
     title: "ROOF REPAIR",
     description:
       "Leaks, cracks, or storm damage? We patch it up before it gets worse.",
     image: "/images/wp/2018/07/roof-repairs-pic3.jpg",
+    href: "/roof-repairs/",
   },
   {
     title: "ROOF REPLACEMENT",
     description:
       "Out with the old, in with something way better (and leak-free).",
     image: "/images/wp/2022/02/Reroof-Parkdale-after-image.jpg",
+    href: "/re-roofing/",
   },
   {
-    title: "ROOF INSPECTIONS",
+    title: "ROOF RESTORATION",
     description:
-      "Spot problems early, fix them fast, and keep your roof happy.",
+      "Bring tired roofs back to life — cleaning, re-bedding, re-pointing, sealing.",
     image: "/images/wp/2018/07/Roof-Restoration-pic4-e1532571077281.jpg",
+    href: "/roof-restoration/",
   },
   {
-    title: "ROOF COATING",
+    title: "ROOF PAINTING",
     description: "It's like sunscreen... but for your roof.",
     image: "/images/wp/2018/10/roof-painting-and-re-pointing.jpg",
+    href: "/roof-painting/",
   },
   {
-    title: "COMMERCIAL ROOFING",
+    title: "GUTTERING & PLUMBING",
     description:
-      "From the ground up to the top of the roof — we've got you covered.",
+      "Full rainwater system — gutters, downpipes, fascia — matched to your roof.",
     image: "/images/wp/2018/05/Colorbond-Roofing-pic1.jpg",
+    href: "/guttering/",
   },
 ];
 
@@ -47,70 +54,72 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <motion.div
-      onHoverStart={() => setHovered(true)}
-      onHoverEnd={() => setHovered(false)}
-      className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden flex flex-col relative"
-    >
-      <div className="flex flex-1">
-        {/* Text Side */}
-        <div className="flex-1 p-5 flex flex-col justify-between">
-          <div>
-            <h3 className="font-bold text-sm uppercase mb-2">
-              {service.title}
-            </h3>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              {service.description}
-            </p>
-          </div>
-          {/* Green Arrow Button - visible when not hovered */}
-          <div className="mt-4">
-            <motion.div
-              animate={{ opacity: hovered ? 0 : 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <button className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
-                <span className="text-white text-sm font-bold">
-                  &gt;
+    <Link href={service.href} className="block">
+      <motion.div
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden flex flex-col relative cursor-pointer h-full"
+      >
+        <div className="flex flex-1">
+          {/* Text Side */}
+          <div className="flex-1 p-5 flex flex-col justify-between">
+            <div>
+              <h3 className="font-bold text-sm uppercase mb-2">
+                {service.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+            {/* Green Arrow Button - visible when not hovered */}
+            <div className="mt-4">
+              <motion.div
+                animate={{ opacity: hovered ? 0 : 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <span className="w-8 h-8 bg-green-500 rounded flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">
+                    &gt;
+                  </span>
                 </span>
-              </button>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Image Side */}
+          <div className="relative w-[140px] min-h-[180px] flex-shrink-0 overflow-hidden">
+            <motion.div
+              className="absolute inset-0"
+              animate={{ scale: hovered ? 1.05 : 1 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-cover"
+                sizes="140px"
+              />
             </motion.div>
           </div>
         </div>
 
-        {/* Image Side */}
-        <div className="relative w-[140px] min-h-[180px] flex-shrink-0 overflow-hidden">
-          <motion.div
-            className="absolute inset-0"
-            animate={{ scale: hovered ? 1.05 : 1 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            <Image
-              src={service.image}
-              alt={service.title}
-              fill
-              className="object-cover"
-              sizes="140px"
-            />
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Full-width VIEW bar - appears on hover */}
-      <motion.div
-        className="bg-green-500 flex items-center justify-between px-5 overflow-hidden"
-        initial={{ height: 0 }}
-        animate={{ height: hovered ? 40 : 0 }}
-        transition={{ duration: 0.25, ease: "easeInOut" }}
-      >
-        <span className="text-white text-sm font-bold uppercase tracking-wider">
-          VIEW
-        </span>
-        <span className="text-white text-sm font-bold tracking-wider">
-          &gt;&gt;&gt;
-        </span>
+        {/* Full-width VIEW bar - appears on hover */}
+        <motion.div
+          className="bg-green-500 flex items-center justify-between px-5 overflow-hidden"
+          initial={{ height: 0 }}
+          animate={{ height: hovered ? 40 : 0 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+        >
+          <span className="text-white text-sm font-bold uppercase tracking-wider">
+            VIEW
+          </span>
+          <span className="text-white text-sm font-bold tracking-wider">
+            &gt;&gt;&gt;
+          </span>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Link>
   );
 }
 

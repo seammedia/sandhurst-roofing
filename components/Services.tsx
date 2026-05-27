@@ -153,14 +153,13 @@ export default function Services() {
 
         {/* View All Button */}
         <div className="flex justify-center">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors flex items-center gap-2"
+          <Link
+            href="/contact/"
+            className="bg-black text-white uppercase text-sm tracking-wider px-8 py-3 rounded hover:bg-gray-800 transition-colors inline-flex items-center gap-2"
           >
-            View All Services
+            Get A Free Quote
             <span className="text-lg">&rarr;</span>
-          </motion.button>
+          </Link>
         </div>
       </div>
     </section>

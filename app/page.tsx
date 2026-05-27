@@ -11,6 +11,7 @@ import RoofingTypes from "@/components/RoofingTypes";
 import Blog from "@/components/Blog";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import { getAllPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   alternates: {
@@ -19,6 +20,16 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  // Pull the 3 most recent blog posts (sorted by date desc in getAllPosts) so
+  // the homepage Blog section reflects real content + links to real /blog/[slug]/.
+  const recentPosts = getAllPosts().slice(0, 3).map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    date: p.date,
+    categories: p.categories,
+    featuredImage: p.featuredImage,
+  }));
+
   return (
     <main>
       <Navbar />
@@ -30,7 +41,7 @@ export default function Home() {
       <HowWeWork />
       <Reviews />
       <RoofingTypes />
-      <Blog />
+      <Blog posts={recentPosts} />
       <FAQ />
       <Footer />
     </main>

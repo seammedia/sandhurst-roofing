@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const serviceLinks = [
@@ -136,13 +137,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav className="sticky top-0 z-50 bg-black shadow-md">
       {/* Top bar with phone number */}
-      <div className="hidden border-b border-gray-100 bg-gray-50 lg:block">
+      <div className="hidden border-b border-white/10 bg-zinc-950 lg:block">
         <div className="mx-auto flex max-w-7xl items-center justify-end px-4 py-1 sm:px-6 lg:px-8">
           <a
             href="tel:0448812800"
-            className="flex items-center gap-1.5 text-xs font-medium text-gray-600 transition-colors hover:text-[#7cda24]"
+            className="flex items-center gap-1.5 text-xs font-medium text-gray-300 transition-colors hover:text-[#7cda24]"
           >
             <svg
               className="h-3.5 w-3.5"
@@ -165,39 +166,15 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex shrink-0 items-center gap-2">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="shrink-0"
-            >
-              <path
-                d="M4 18L16 6L28 18"
-                stroke="#7cda24"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M8 15V26H24V15"
-                stroke="#7cda24"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <rect x="13" y="20" width="6" height="6" rx="0.5" fill="#7cda24" />
-            </svg>
-            <div className="flex flex-col leading-tight">
-              <span className="text-lg font-bold tracking-tight text-black">
-                SANDHURST ROOFING
-              </span>
-              <span className="text-[10px] text-gray-500">
-                For all your roofing problems
-              </span>
-            </div>
+          <Link href="/" className="flex shrink-0 items-center">
+            <Image
+              src="/images/new-logo.png"
+              alt="Sandhurst Roofing - For all your roofing solutions"
+              width={538}
+              height={357}
+              priority
+              className="h-12 w-auto lg:h-16"
+            />
           </Link>
 
           {/* Desktop nav links */}
@@ -215,7 +192,7 @@ export default function Navbar() {
                 >
                   {hasDropdown ? (
                     <button
-                      className="flex items-center gap-0.5 rounded px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-[#7cda24]"
+                      className="flex items-center gap-0.5 rounded px-3 py-2 text-sm font-medium text-white transition-colors hover:text-[#7cda24]"
                       onClick={() =>
                         setOpenDropdown(
                           openDropdown === item.label ? null : item.label
@@ -228,7 +205,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="rounded px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:text-[#7cda24]"
+                      className="rounded px-3 py-2 text-sm font-medium text-white transition-colors hover:text-[#7cda24]"
                     >
                       {item.label}
                     </Link>
@@ -276,7 +253,7 @@ export default function Navbar() {
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex h-10 w-10 items-center justify-center text-gray-800 lg:hidden"
+              className="flex h-10 w-10 items-center justify-center text-white lg:hidden"
               aria-label="Toggle menu"
             >
               {mobileOpen ? (
@@ -321,7 +298,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-gray-100 bg-white lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-black lg:hidden"
           >
             <div className="mx-auto max-w-7xl space-y-0 px-4 pb-4 pt-2">
               {navItems.map((item) => {
@@ -333,7 +310,7 @@ export default function Navbar() {
                     {hasDropdown ? (
                       <button
                         onClick={() => toggleMobileSection(item.label)}
-                        className="flex w-full items-center justify-between px-3 py-3 text-sm font-medium text-gray-800 transition-colors hover:text-[#7cda24]"
+                        className="flex w-full items-center justify-between px-3 py-3 text-sm font-medium text-white transition-colors hover:text-[#7cda24]"
                       >
                         {item.label}
                         <ChevronDown
@@ -346,7 +323,7 @@ export default function Navbar() {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-3 text-sm font-medium text-gray-800 transition-colors hover:text-[#7cda24]"
+                        className="block px-3 py-3 text-sm font-medium text-white transition-colors hover:text-[#7cda24]"
                       >
                         {item.label}
                       </Link>
@@ -368,7 +345,7 @@ export default function Navbar() {
                                 key={sub.href}
                                 href={sub.href}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 text-sm text-gray-600 transition-colors hover:text-[#7cda24]"
+                                className="block py-2 text-sm text-gray-400 transition-colors hover:text-[#7cda24]"
                               >
                                 {sub.label}
                               </Link>

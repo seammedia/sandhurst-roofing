@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 const serviceLinks = [
   { label: "Roof Restoration", href: "/roof-restoration/" },
@@ -48,34 +49,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4 18L16 6L28 18"
-                  stroke="#7cda24"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M8 15V26H24V15"
-                  stroke="#7cda24"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <rect x="13" y="20" width="6" height="6" rx="0.5" fill="#7cda24" />
-              </svg>
-              <span className="text-lg font-bold tracking-tight">
-                SANDHURST ROOFING
-              </span>
-            </div>
+            <Link href="/" className="mb-5 inline-block">
+              <Image
+                src="/images/new-logo.png"
+                alt="Sandhurst Roofing - For all your roofing solutions"
+                width={538}
+                height={357}
+                className="h-20 w-auto"
+              />
+            </Link>
             <p className="mb-6 text-sm leading-relaxed text-gray-400">
               Professional roofing services across Melbourne's south east.
               Specialising in roof restorations, repairs, COLORBOND roofing,

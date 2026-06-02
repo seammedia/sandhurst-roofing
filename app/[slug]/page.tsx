@@ -12,6 +12,7 @@ import {
   getSiteData,
 } from "@/lib/content";
 import { sanitizeHtml } from "@/lib/sanitize";
+import { extractFaqs } from "@/lib/faq-schema";
 
 // Pages that have their own dedicated routes - skip them here
 const RESERVED_SLUGS = ["blog", "faq", "contact", "thank-you"];
@@ -119,8 +120,31 @@ export default async function SlugPage({
 
   const siteData = getSiteData();
 
+  // FAQPage structured data for pages that have a FAQ section (rich snippets).
+  const faqs = extractFaqs(content.content);
+  const faqJsonLd =
+    faqs.length >= 2
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }
+      : null;
+
   return (
     <main>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <Navbar />
 
       <section className="bg-black px-4 py-16 sm:px-6 lg:px-8">

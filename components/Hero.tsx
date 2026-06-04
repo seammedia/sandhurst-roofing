@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const badges = [
   { icon: "🏗️", label: "35+ years of experience" },
   { icon: "✅", label: "Certified Contractor" },
-  { icon: "🏆", label: "Voted best roofers in Sandhurst 2026" },
+  { icon: "🏆", label: "Voted best roofers in Frankston Mornington Peninsula" },
 ];
 
 export default function Hero() {
@@ -125,8 +125,8 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       >
         <Image
-          src="/images/wp/2018/08/Roof-Restoration-pic5.jpg"
-          alt="Professional roofers working on a roof"
+          src="/images/hero-aerial.png"
+          alt="Aerial view of a restored grey COLORBOND tile roof by Sandhurst Roofing"
           width={1600}
           height={600}
           className="h-auto w-full object-cover"

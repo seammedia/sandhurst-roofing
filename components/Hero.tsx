@@ -125,7 +125,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       >
         <Image
-          src="/images/hero-aerial.png"
+          src="/images/hero-aerial-wide.png"
           alt="Aerial view of a restored grey COLORBOND tile roof by Sandhurst Roofing"
           width={1600}
           height={600}

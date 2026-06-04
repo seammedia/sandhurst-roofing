@@ -254,6 +254,24 @@ export default function ContactPage() {
 
                   <div>
                     <label
+                      htmlFor="address"
+                      className="mb-1 block text-sm font-medium text-gray-700"
+                    >
+                      Property Address *
+                    </label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      required
+                      autoComplete="street-address"
+                      placeholder="Street, suburb"
+                      className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-[#7cda24] focus:outline-none focus:ring-1 focus:ring-[#7cda24]"
+                    />
+                  </div>
+
+                  <div>
+                    <label
                       htmlFor="service"
                       className="mb-1 block text-sm font-medium text-gray-700"
                     >

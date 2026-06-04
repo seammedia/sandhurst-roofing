@@ -28,6 +28,7 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   const lastName = String(formData.get("lastName") || "").trim();
   const email = String(formData.get("email") || "").trim();
   const phone = String(formData.get("phone") || "").trim();
+  const address = String(formData.get("address") || "").trim();
   const service = String(formData.get("service") || "").trim();
   const message = String(formData.get("message") || "").trim();
   // Honeypot field - bots fill in everything; humans never see this field.
@@ -39,7 +40,7 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   }
 
   // Server-side validation (the source of truth - client validation is just UX).
-  if (!firstName || !lastName || !email || !phone || !message) {
+  if (!firstName || !lastName || !email || !phone || !address || !message) {
     throw new Error("All required fields must be completed.");
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -65,6 +66,7 @@ export async function submitContactForm(formData: FormData): Promise<void> {
     `Name:    ${firstName} ${lastName}`,
     `Email:   ${email}`,
     `Phone:   ${phone}`,
+    `Address: ${address}`,
     `Service: ${service || "(not specified)"}`,
     "",
     "Message:",
@@ -79,6 +81,7 @@ export async function submitContactForm(formData: FormData): Promise<void> {
     <p><strong>From:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
     <p><strong>Email:</strong> <a href="mailto:${encodeURIComponent(email)}">${escapeHtml(email)}</a></p>
     <p><strong>Phone:</strong> <a href="tel:${encodeURIComponent(phone)}">${escapeHtml(phone)}</a></p>
+    <p><strong>Property address:</strong> ${escapeHtml(address)}</p>
     <p><strong>Service:</strong> ${escapeHtml(service || "(not specified)")}</p>
     <h3>Message</h3>
     <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>

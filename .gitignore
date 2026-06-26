@@ -40,3 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/images/.original-backup/
+
+# Editor/agent config
+.claude/
+
+# Deck exports / stray PDFs in repo root
+*.pdf

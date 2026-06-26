@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
 import "./globals.css";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import GoogleTag from "@/components/GoogleTag";
+import CallTracking from "@/components/CallTracking";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -76,8 +78,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${anton.variable} ${inter.variable} antialiased`}>
       <body className={inter.className}>
+        <GoogleTag />
         {children}
         <LocalBusinessSchema />
+        <CallTracking />
       </body>
     </html>
   );

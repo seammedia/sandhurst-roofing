@@ -11,6 +11,10 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/api/",
           "/thank-you/",
+          // Paid-traffic landing pages - kept out of organic so they don't
+          // compete with or duplicate the /re-roofing/ and /guttering/ pages.
+          "/re-roofing-quote/",
+          "/guttering-quote/",
         ],
       },
     ],

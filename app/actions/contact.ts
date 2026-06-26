@@ -31,6 +31,8 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   const address = String(formData.get("address") || "").trim();
   const service = String(formData.get("service") || "").trim();
   const message = String(formData.get("message") || "").trim();
+  // Which page/campaign produced the lead (hidden field on PPC landing forms).
+  const source = String(formData.get("source") || "").trim();
   // Honeypot field - bots fill in everything; humans never see this field.
   const honeypot = String(formData.get("website") || "").trim();
 
@@ -40,7 +42,9 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   }
 
   // Server-side validation (the source of truth - client validation is just UX).
-  if (!firstName || !lastName || !email || !phone || !address || !message) {
+  // Message is optional: the PPC landing forms omit it to reduce friction, and a
+  // name + phone + address is already a quotable lead.
+  if (!firstName || !lastName || !email || !phone || !address) {
     throw new Error("All required fields must be completed.");
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -61,16 +65,17 @@ export async function submitContactForm(formData: FormData): Promise<void> {
   }`;
 
   const text = [
-    `New enquiry via sandhurstroofing.com.au contact form`,
+    `New enquiry via sandhurstroofing.com.au`,
     "",
     `Name:    ${firstName} ${lastName}`,
     `Email:   ${email}`,
     `Phone:   ${phone}`,
     `Address: ${address}`,
     `Service: ${service || "(not specified)"}`,
+    `Source:  ${source || "Website contact form"}`,
     "",
     "Message:",
-    message,
+    message || "(none provided)",
     "",
     "----",
     `Reply directly to this email to respond to ${email}.`,
@@ -83,8 +88,9 @@ export async function submitContactForm(formData: FormData): Promise<void> {
     <p><strong>Phone:</strong> <a href="tel:${encodeURIComponent(phone)}">${escapeHtml(phone)}</a></p>
     <p><strong>Property address:</strong> ${escapeHtml(address)}</p>
     <p><strong>Service:</strong> ${escapeHtml(service || "(not specified)")}</p>
+    <p><strong>Source:</strong> ${escapeHtml(source || "Website contact form")}</p>
     <h3>Message</h3>
-    <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
+    <p style="white-space: pre-wrap;">${escapeHtml(message || "(none provided)")}</p>
     <hr>
     <p style="color: #666; font-size: 12px;">
       Sent from the contact form at sandhurstroofing.com.au.

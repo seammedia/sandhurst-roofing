@@ -54,25 +54,21 @@ export default function ThankYouPage() {
       <Navbar />
 
       {CONVERSION_ID && CONVERSION_LABEL ? (
-        <>
-          {/* Google Tag (gtag.js) - loads once, used by both GA4 and Google Ads conversions */}
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${CONVERSION_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-ads-conversion" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${CONVERSION_ID}');
-              gtag('event', 'conversion', {
-                'send_to': '${CONVERSION_ID}/${CONVERSION_LABEL}',
-                'event_callback': function() {}
-              });
-            `}
-          </Script>
-        </>
+        // The gtag.js library + base config load site-wide via <GoogleTag /> in
+        // the root layout. Here we ONLY fire the conversion event so the library
+        // isn't loaded twice (which would double-count GA pageviews). Pushing to
+        // the shared dataLayer is safe even if this runs before the library
+        // finishes loading - gtag.js processes the queued event on init.
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('event', 'conversion', {
+              'send_to': '${CONVERSION_ID}/${CONVERSION_LABEL}',
+              'event_callback': function() {}
+            });
+          `}
+        </Script>
       ) : null}
 
       <section className="bg-black px-4 py-16 sm:px-6 lg:px-8">

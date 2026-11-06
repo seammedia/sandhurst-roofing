@@ -11,7 +11,7 @@ const services = [
     title: "ROOF INSTALLATION",
     description:
       "Built strong from the start — because a solid roof starts with a solid install.",
-    image: "/images/wp/2018/07/Roof-Restoration-pic1.jpg",
+    image: "/images/wp/2020/05/monument-tin-roof-e1590908479834.jpg",
     href: "/re-roofing/",
   },
   {
@@ -38,7 +38,7 @@ const services = [
   {
     title: "TILE TO TIN",
     description:
-      "Swap an old tile roof for lightweight, low-maintenance metal.",
+      "Swap a heavy old roof for lightweight, low-maintenance metal.",
     image: "/images/wp/2023/02/Roofing-springvale-south-6.jpg",
     href: "/tile-to-tin-roof/",
   },

@@ -109,7 +109,7 @@
       "slug": "narre-warren"
     },
     {
-      "title": "Roof Restoration Berwick",
+      "title": "Berwick",
       "slug": "berwick"
     },
     {
@@ -185,7 +185,7 @@
       "slug": "merricks-north"
     },
     {
-      "title": "Roof Restoration Point Leo",
+      "title": "Point Leo",
       "slug": "point-leo"
     },
     {
@@ -213,7 +213,7 @@
       "slug": "cranbourne-west"
     },
     {
-      "title": "Roof Restoration Cranbourne South",
+      "title": "Cranbourne South",
       "slug": "cranbourne-south"
     },
     {
@@ -317,7 +317,7 @@
       "slug": "dandenong-north"
     },
     {
-      "title": "Roof Restoration Dandenong South",
+      "title": "Dandenong South",
       "slug": "dandenong-south"
     },
     {
@@ -340,23 +340,17 @@
   "blogCategories": [
     "Asbestos Roof Removal",
     "COLORBOND® steel",
-    "Cement Tiles",
     "Emergency Roofing",
     "Gutter Replacements",
     "Guttering",
     "Metal Roofing",
     "Roof Inspections",
     "Roof Maintenance",
-    "Roof Painting",
     "Roof Plumbing",
-    "Roof Repairs",
     "Roof Replacement",
-    "Roof Restoration",
     "Roofing",
-    "Terracotta Tiles",
-    "Tile Roofing",
     "Uncategorized"
   ],
-  "postCount": 38,
+  "postCount": 19,
   "pageCount": 116
 }

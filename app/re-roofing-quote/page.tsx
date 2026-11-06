@@ -30,7 +30,7 @@ const benefits = [
   },
   {
     title: "Old roof off, new roof on",
-    body: "Ageing tiles, rusted iron, tired COLORBOND - we strip the old roof and install a new COLORBOND steel roof built to last decades.",
+    body: "Ageing roofing, rusted iron, tired COLORBOND - we strip the old roof and install a new COLORBOND steel roof built to last decades.",
   },
   {
     title: "Family-run, fully insured",
@@ -43,7 +43,7 @@ const benefits = [
 ];
 
 const signs = [
-  "Tiles cracking, slipping or letting water through",
+  "Sheeting lifting, cracking or letting water through",
   "Rusted or leaking metal sheets",
   "Multiple leaks in different spots after rain",
   "Sagging or damaged roof structure",
@@ -64,8 +64,8 @@ const faqs = [
     a: "Every roof is different, so we quote on the actual job after an on-site inspection. The cost of a full re-roof is often comparable to extensive repairs, and it solves the problem for decades rather than patching it.",
   },
   {
-    q: "Do you replace tile roofs with COLORBOND?",
-    a: "Yes. Tile-to-tin conversions are one of our most popular jobs. We remove the old tiles and install lightweight COLORBOND® steel, which is durable, low-maintenance and comes in the full colour range.",
+    q: "Do you do tile to tin conversions?",
+    a: "Yes. Tile-to-tin conversions are one of our most popular jobs. We remove the old roof and install lightweight COLORBOND® steel, which is durable, low-maintenance and comes in the full colour range.",
   },
   {
     q: "How long does a re-roof take?",
@@ -93,7 +93,7 @@ export default function ReRoofingQuotePage() {
               Re-Roofing &amp; Roof Replacement Done Right
             </h1>
             <p className="mt-4 max-w-xl text-lg text-gray-300">
-              Tired tiles or rusted metal? Get a free, fixed-price quote from a
+              Tired or rusted roof? Get a free, fixed-price quote from a
               local, family-run team with 35+ years replacing roofs across
               Melbourne&apos;s south-east in COLORBOND® steel.
             </p>
@@ -204,7 +204,7 @@ export default function ReRoofingQuotePage() {
           <div className="overflow-hidden rounded-xl">
             <Image
               src="/images/hero-aerial-wide.png"
-              alt="Aerial view of a restored COLORBOND steel roof by Sandhurst Roofing"
+              alt="Aerial view of a new COLORBOND steel roof by Sandhurst Roofing"
               width={1448}
               height={1086}
               className="h-full w-full object-cover"
@@ -243,12 +243,11 @@ export default function ReRoofingQuotePage() {
             <blockquote className="rounded-xl border border-gray-200 bg-white p-6 text-left">
               <p className="text-[#7cda24]">★★★★★</p>
               <p className="mt-2 text-gray-700">
-                Matt and his guys did a great job restoring our tile roof. Great
-                communication from start to finish. Great result and very
-                reasonable price.
+                Super job on my re roofing. Boys could not of been more
+                helpful. Great job will use again.
               </p>
               <cite className="mt-3 block text-sm font-semibold not-italic text-gray-900">
-                — Ben Prout
+                — Brett Hudgson, Mornington
               </cite>
             </blockquote>
             <blockquote className="rounded-xl border border-gray-200 bg-white p-6 text-left">

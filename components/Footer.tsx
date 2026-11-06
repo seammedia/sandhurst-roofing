@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const serviceLinks = [
-  { label: "Roof Restoration", href: "/roof-restoration/" },
-  { label: "Roof Repairs", href: "/roof-repairs/" },
   { label: "COLORBOND Roofing", href: "/colorbond-roofing/" },
   { label: "Re-Roofing", href: "/re-roofing/" },
   { label: "Roof Painting", href: "/roof-painting/" },
@@ -60,7 +58,7 @@ export default function Footer() {
             </Link>
             <p className="mb-6 text-sm leading-relaxed text-gray-400">
               Professional roofing services across Melbourne's south east.
-              Specialising in roof restorations, repairs, COLORBOND roofing,
+              Specialising in roof plumbing, metal roofing, COLORBOND roofing,
               and complete re-roofs. Fully licensed and insured.
             </p>
 

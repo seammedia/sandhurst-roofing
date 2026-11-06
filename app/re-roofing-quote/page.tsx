@@ -29,8 +29,8 @@ const benefits = [
     body: "A clear written price after an on-site inspection. No surprises, no hidden extras once the job starts.",
   },
   {
-    title: "Tile or metal, we do it all",
-    body: "Old tiles, rusted iron, tired COLORBOND - we strip the old roof and install a new one built to last decades.",
+    title: "Old roof off, new roof on",
+    body: "Ageing tiles, rusted iron, tired COLORBOND - we strip the old roof and install a new COLORBOND steel roof built to last decades.",
   },
   {
     title: "Family-run, fully insured",
@@ -61,7 +61,7 @@ const steps = [
 const faqs = [
   {
     q: "How much does re-roofing cost?",
-    a: "Every roof is different, so we quote on the actual job after an on-site inspection. The cost of a full re-roof is often comparable to extensive repairs or repainting, and it solves the problem for decades rather than patching it.",
+    a: "Every roof is different, so we quote on the actual job after an on-site inspection. The cost of a full re-roof is often comparable to extensive repairs, and it solves the problem for decades rather than patching it.",
   },
   {
     q: "Do you replace tile roofs with COLORBOND?",

@@ -13,7 +13,7 @@ export default function LocalBusinessSchema() {
     "@id": "https://sandhurstroofing.com.au/#business",
     name: "Sandhurst Roofing",
     description:
-      "Family-run roofing specialists serving Melbourne's south-east and the Mornington Peninsula. Roof restoration, re-roofing, COLORBOND® steel roofing, gutter repairs and replacement. 35+ years of experience.",
+      "Family-run roofing specialists serving Melbourne's south-east and the Mornington Peninsula. Roof plumbing, re-roofing, COLORBOND® steel roofing, tile to tin conversions, gutter repairs and replacement. 35+ years of experience.",
     url: "https://sandhurstroofing.com.au",
     telephone: "+61448812800",
     email: "info@sandhurstroofing.com.au",
@@ -64,9 +64,9 @@ export default function LocalBusinessSchema() {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Roof Restoration",
-          serviceType: "Roof Restoration",
-          url: "https://sandhurstroofing.com.au/roof-restoration/",
+          name: "Roof Plumbing",
+          serviceType: "Roof Plumbing",
+          url: "https://sandhurstroofing.com.au/roof-plumber-melbourne/",
         },
       },
       {
@@ -91,18 +91,9 @@ export default function LocalBusinessSchema() {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Roof Repairs",
-          serviceType: "Roof Repairs",
-          url: "https://sandhurstroofing.com.au/roof-repairs/",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Roof Painting",
-          serviceType: "Roof Painting",
-          url: "https://sandhurstroofing.com.au/roof-painting/",
+          name: "Tile To Tin Roof",
+          serviceType: "Tile To Tin Roof Conversion",
+          url: "https://sandhurstroofing.com.au/tile-to-tin-roof/",
         },
       },
       {

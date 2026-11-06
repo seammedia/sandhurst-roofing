@@ -16,8 +16,8 @@ const portfolioImages = [
     alt: "Roof replacement completed",
   },
   {
-    src: "/images/wp/2018/08/Roof-Restoration-pic5.jpg",
-    alt: "Roofer working on roof restoration",
+    src: "/images/wp/2020/01/steep-re-roof-picture-5.jpg",
+    alt: "New metal roof around a brick chimney",
   },
   {
     src: "/images/wp/2018/01/IMG_3365.png",

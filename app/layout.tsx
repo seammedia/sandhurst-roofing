@@ -20,21 +20,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sandhurstroofing.com.au"),
   title: {
-    default: "Roof Repairs, Restoration & Gutter Repairs | Sandhurst Roofing",
+    default: "Roof Plumber, Re-Roofing & COLORBOND | Sandhurst Roofing",
     template: "%s | Sandhurst Roofing",
   },
   description:
-    "Get top-notch roof repair services and craftsmanship with Sandhurst Roofing. Contact us today to discuss your specific requirements.",
+    "Roof plumbing, re-roofing and COLORBOND® steel roofing across Frankston, the Mornington Peninsula and Melbourne's south-east. Contact Sandhurst Roofing for a free quote.",
   applicationName: "Sandhurst Roofing",
   authors: [{ name: "Sandhurst Roofing", url: "https://sandhurstroofing.com.au" }],
   generator: "Next.js",
   keywords: [
     "roofing Melbourne",
-    "roof restoration Frankston",
+    "roof plumber Frankston",
     "re-roofing Mornington Peninsula",
     "COLORBOND roofing",
     "gutter repairs Melbourne",
-    "roof painting",
+    "tile to tin roof",
     "roof plumber Melbourne",
   ],
   // NOTE: do NOT set a default `alternates.canonical` here. When set in the
@@ -47,15 +47,15 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: "https://sandhurstroofing.com.au",
     siteName: "Sandhurst Roofing",
-    title: "Roof Repairs, Restoration & Gutter Repairs | Sandhurst Roofing",
+    title: "Roof Plumber, Re-Roofing & COLORBOND | Sandhurst Roofing",
     description:
-      "Get top-notch roof repair services and craftsmanship with Sandhurst Roofing. Contact us today to discuss your specific requirements.",
+      "Roof plumbing, re-roofing and COLORBOND® steel roofing across Frankston, the Mornington Peninsula and Melbourne's south-east. Contact Sandhurst Roofing for a free quote.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Sandhurst Roofing - Melbourne's Roof Specialists",
     description:
-      "Roof restoration, re-roofing, COLORBOND® and gutters. Family-run, 35+ years in the trade. Frankston · Mornington Peninsula · Melbourne SE.",
+      "Roof plumbing, re-roofing, COLORBOND® and gutters. Family-run, 35+ years in the trade. Frankston · Mornington Peninsula · Melbourne SE.",
   },
   robots: {
     index: true,

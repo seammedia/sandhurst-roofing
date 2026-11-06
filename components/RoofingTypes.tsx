@@ -15,20 +15,20 @@ const roofingTypes = [
     href: "/colorbond-roofing/",
   },
   {
-    title: "TERRACOTTA TILE",
-    image: "/images/wp/2018/04/Terracotta-Tile-Roof-pic1-e1522887256963.jpg",
+    title: "FLAT METAL ROOFING",
+    image: "/images/wp/2018/07/flat-metal-roofing-pic2-e1532572999317.jpg",
     description:
-      "Timeless elegance, unbeatable heat resistance, extreme durability.",
-    lifespan: "50-100+ years",
-    href: "/terracotta-tiles/",
+      "Clean lines and tight seams for low-pitch roofs, extensions and verandahs.",
+    lifespan: "30-50+ years",
+    href: "/flat-metal-roofing/",
   },
   {
-    title: "CEMENT TILE",
-    image: "/images/wp/2018/07/cement-tiles-pic1-e1532573899902.jpg",
+    title: "TILE TO TIN",
+    image: "/images/wp/2023/02/Roofing-springvale-south-6.jpg",
     description:
-      "Stylish, tough, and made to mimic high-end without the high cost.",
-    lifespan: "40-75 years",
-    href: "/cement-tiles/",
+      "Lose the weight and the maintenance. Convert an old tile roof to metal.",
+    lifespan: "30-50+ years",
+    href: "/tile-to-tin-roof/",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function RoofingTypes() {
 
           {/* Main Heading */}
           <h2 className="font-heading text-3xl md:text-5xl text-center uppercase mb-12">
-            COLORBOND? TERRACOTTA? CEMENT? LET&apos;S FIND YOUR MATCH
+            COLORBOND? FLAT METAL? TILE TO TIN? LET&apos;S FIND YOUR MATCH
           </h2>
         </ScrollReveal>
 

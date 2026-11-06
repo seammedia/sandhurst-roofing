@@ -23,7 +23,7 @@ const faqItems = [
   {
     question: "What types of roofing materials do you offer?",
     answer:
-      "We work with asphalt shingles, clay tiles, concrete tiles, metal roofing, and more.",
+      "We specialise in COLORBOND® steel and other metal roofing, including converting old tile roofs to metal.",
   },
   {
     question: "Are you licensed and insured?",
@@ -43,7 +43,7 @@ const faqItems = [
   {
     question: "Do you offer emergency roofing services?",
     answer:
-      "Yes, we offer 24/7 emergency roofing services for urgent repairs.",
+      "Yes, we offer 24/7 emergency roofing services for urgent leaks and storm damage.",
   },
 ];
 

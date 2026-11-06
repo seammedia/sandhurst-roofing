@@ -25,7 +25,7 @@ export const redirectMap: Redirect[] = [
   // ===== existing-simple-301 (preserved from WordPress Simple 301 Redirects plugin) =====
   { source: "/chelsey-heights/", destination: "/chelsea-heights/", permanent: true },
   { source: "/cape-schank/", destination: "/cape-schanck/", permanent: true },
-  { source: "/roof-restoration/img_2236", destination: "/roof-restoration/", permanent: true },
+  { source: "/roof-restoration/img_2236", destination: "/re-roofing/", permanent: true },
   { source: "/guttering/img_2707", destination: "/guttering/", permanent: true },
   { source: "/colorbond", destination: "/colorbond-roofing/", permanent: true },
   { source: "/gallery", destination: "/recent-jobs/", permanent: true },
@@ -86,4 +86,29 @@ export const redirectMap: Redirect[] = [
 
   // ===== blog-missing-on-nextjs (pergola post - will become real once added in Task #17) =====
   { source: "/pergola-repairs-or-replacement/", destination: "/blog/pergola-repairs-or-replacement/", permanent: true },
+
+  // ===== removed services (tile / repair / restoration) =====
+  { source: "/roof-repairs/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration/", destination: "/re-roofing/", permanent: true },
+  { source: "/terracotta-tiles/", destination: "/tile-to-tin-roof/", permanent: true },
+  { source: "/cement-tiles/", destination: "/tile-to-tin-roof/", permanent: true },
+  { source: "/rebedding-repointing/", destination: "/tile-to-tin-roof/", permanent: true },
+
+  // ===== removed roof-restoration-<suburb> pages =====
+  { source: "/roof-restoration-aspendale/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-beaumaris/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-blairgowrie/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-botanic-ridge/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-braeside/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-clayton/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-dromana/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-hampton/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-heatherton/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-highett/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-mccrae/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-merricks/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-near-me/", destination: "/roof-plumber-near-me/", permanent: true },
+  { source: "/roof-restoration-portsea/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-rosebud/", destination: "/roof-plumber-melbourne/", permanent: true },
+  { source: "/roof-restoration-safety-beach/", destination: "/roof-plumber-melbourne/", permanent: true },
 ];

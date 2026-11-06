@@ -6,20 +6,15 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const serviceLinks = [
-  { label: "Roof Restoration", href: "/roof-restoration/" },
-  { label: "Roof Repairs", href: "/roof-repairs/" },
   { label: "COLORBOND Roofing", href: "/colorbond-roofing/" },
   { label: "Re-Roofing", href: "/re-roofing/" },
   { label: "Roof Painting", href: "/roof-painting/" },
   { label: "Flat Metal Roofing", href: "/flat-metal-roofing/" },
-  { label: "Terracotta Tiles", href: "/terracotta-tiles/" },
-  { label: "Cement Tiles", href: "/cement-tiles/" },
   { label: "Guttering", href: "/guttering/" },
   { label: "Roof Plumber", href: "/roof-plumber-melbourne/" },
   { label: "Pergolas & Bali Huts", href: "/pergola/" },
   { label: "Asbestos Removal", href: "/asbestos-roof-removal-and-replacement/" },
   { label: "Tile To Tin", href: "/tile-to-tin-roof/" },
-  { label: "Rebedding & Repointing", href: "/rebedding-repointing/" },
   { label: "Gutter Repairs", href: "/gutter-repairs/" },
   { label: "Gutter Replacement", href: "/gutter-replacement/" },
 ];

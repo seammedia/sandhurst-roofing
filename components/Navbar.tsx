@@ -13,7 +13,6 @@ const serviceLinks = [
   { label: "Guttering", href: "/guttering/" },
   { label: "Roof Plumber", href: "/roof-plumber-melbourne/" },
   { label: "Pergolas & Bali Huts", href: "/pergola/" },
-  { label: "Asbestos Removal", href: "/asbestos-roof-removal-and-replacement/" },
   { label: "Tile To Tin", href: "/tile-to-tin-roof/" },
   { label: "Gutter Repairs", href: "/gutter-repairs/" },
   { label: "Gutter Replacement", href: "/gutter-replacement/" },

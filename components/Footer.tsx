@@ -9,7 +9,6 @@ const serviceLinks = [
   { label: "Roof Painting", href: "/roof-painting/" },
   { label: "Flat Metal Roofing", href: "/flat-metal-roofing/" },
   { label: "Guttering", href: "/guttering/" },
-  { label: "Asbestos Removal", href: "/asbestos-roof-removal-and-replacement/" },
   { label: "Tile To Tin", href: "/tile-to-tin-roof/" },
   { label: "Gutter Repairs", href: "/gutter-repairs/" },
   { label: "Gutter Replacement", href: "/gutter-replacement/" },

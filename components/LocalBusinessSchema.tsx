@@ -114,15 +114,6 @@ export default function LocalBusinessSchema() {
           url: "https://sandhurstroofing.com.au/flat-metal-roofing/",
         },
       },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Asbestos Roof Removal & Replacement",
-          serviceType: "Asbestos Roof Removal & Replacement",
-          url: "https://sandhurstroofing.com.au/asbestos-roof-removal-and-replacement/",
-        },
-      },
     ],
   };
 

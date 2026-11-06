@@ -60,8 +60,8 @@ const stats = [
   {
     number: "1,000",
     suffix: "+",
-    label: "REPAIRS COMPLETED",
-    desc: "Fast, reliable, and leak-proof - just how roof repairs should be.",
+    label: "JOBS COMPLETED",
+    desc: "Fast, reliable, and leak-proof - just how roofing work should be.",
   },
   {
     number: "5",

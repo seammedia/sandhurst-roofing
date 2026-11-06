@@ -1,26 +1,14 @@
 {
   "title": "Sandhurst Roofing",
-  "description": "Roof Restoration & Repairs - Frankston & Mornington Peninsula",
+  "description": "Roof Plumbing, Metal Roofing & COLORBOND - Frankston & Mornington Peninsula",
   "url": "https://sandhurstroofing.com.au",
   "phone": "0448 812 800",
   "address": "10 Duiker Crt, Langwarrin VIC",
   "brandColor": "#7cda24",
   "services": [
     {
-      "title": "Roof Repairs",
-      "slug": "roof-repairs"
-    },
-    {
       "title": "COLORBOND ® steel Roofing",
       "slug": "colorbond-roofing"
-    },
-    {
-      "title": "Terracotta Tiles",
-      "slug": "terracotta-tiles"
-    },
-    {
-      "title": "Cement Tiles",
-      "slug": "cement-tiles"
     },
     {
       "title": "Guttering",
@@ -29,10 +17,6 @@
     {
       "title": "Flat Metal Roofing",
       "slug": "flat-metal-roofing"
-    },
-    {
-      "title": "Roof Restoration",
-      "slug": "roof-restoration"
     },
     {
       "title": "Re-Roofing",
@@ -47,10 +31,6 @@
       "slug": "roof-plumber-melbourne"
     },
     {
-      "title": "Rebedding & Repointing",
-      "slug": "rebedding-repointing"
-    },
-    {
       "title": "Gutter Repairs",
       "slug": "gutter-repairs"
     },
@@ -61,10 +41,6 @@
     {
       "title": "Tile To Tin Roof",
       "slug": "tile-to-tin-roof"
-    },
-    {
-      "title": "Asbestos Roof Removal And Replacement",
-      "slug": "asbestos-roof-removal-and-replacement"
     },
     {
       "title": "Pergolas & Bali Huts",
@@ -129,7 +105,7 @@
       "slug": "narre-warren"
     },
     {
-      "title": "Roof Restoration Berwick",
+      "title": "Berwick",
       "slug": "berwick"
     },
     {
@@ -193,10 +169,6 @@
       "slug": "keysborough"
     },
     {
-      "title": "Roof Restoration Near Me",
-      "slug": "roof-restoration-near-me"
-    },
-    {
       "title": "Frankston North",
       "slug": "frankston-north"
     },
@@ -209,7 +181,7 @@
       "slug": "merricks-north"
     },
     {
-      "title": "Roof Restoration Point Leo",
+      "title": "Point Leo",
       "slug": "point-leo"
     },
     {
@@ -237,7 +209,7 @@
       "slug": "cranbourne-west"
     },
     {
-      "title": "Roof Restoration Cranbourne South",
+      "title": "Cranbourne South",
       "slug": "cranbourne-south"
     },
     {
@@ -341,7 +313,7 @@
       "slug": "dandenong-north"
     },
     {
-      "title": "Roof Restoration Dandenong South",
+      "title": "Dandenong South",
       "slug": "dandenong-south"
     },
     {
@@ -359,88 +331,21 @@
     {
       "title": "Roof Plumber Near Me",
       "slug": "roof-plumber-near-me"
-    },
-    {
-      "title": "Portsea",
-      "slug": "roof-restoration-portsea"
-    },
-    {
-      "title": "Dromana",
-      "slug": "roof-restoration-dromana"
-    },
-    {
-      "title": "Blairgowrie",
-      "slug": "roof-restoration-blairgowrie"
-    },
-    {
-      "title": "Hampton",
-      "slug": "roof-restoration-hampton"
-    },
-    {
-      "title": "Clayton",
-      "slug": "roof-restoration-clayton"
-    },
-    {
-      "title": "Braeside",
-      "slug": "roof-restoration-braeside"
-    },
-    {
-      "title": "Beaumaris",
-      "slug": "roof-restoration-beaumaris"
-    },
-    {
-      "title": "Rosebud",
-      "slug": "roof-restoration-rosebud"
-    },
-    {
-      "title": "Safety Beach",
-      "slug": "roof-restoration-safety-beach"
-    },
-    {
-      "title": "Botanic Ridge",
-      "slug": "roof-restoration-botanic-ridge"
-    },
-    {
-      "title": "Aspendale",
-      "slug": "roof-restoration-aspendale"
-    },
-    {
-      "title": "Heatherton",
-      "slug": "roof-restoration-heatherton"
-    },
-    {
-      "title": "Highett",
-      "slug": "roof-restoration-highett"
-    },
-    {
-      "title": "McCrae",
-      "slug": "roof-restoration-mccrae"
-    },
-    {
-      "title": "Merricks",
-      "slug": "roof-restoration-merricks"
     }
   ],
   "blogCategories": [
-    "Asbestos Roof Removal",
     "COLORBOND® steel",
-    "Cement Tiles",
     "Emergency Roofing",
     "Gutter Replacements",
     "Guttering",
     "Metal Roofing",
     "Roof Inspections",
     "Roof Maintenance",
-    "Roof Painting",
     "Roof Plumbing",
-    "Roof Repairs",
     "Roof Replacement",
-    "Roof Restoration",
     "Roofing",
-    "Terracotta Tiles",
-    "Tile Roofing",
     "Uncategorized"
   ],
-  "postCount": 38,
+  "postCount": 18,
   "pageCount": 116
 }

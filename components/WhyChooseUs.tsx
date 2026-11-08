@@ -128,7 +128,7 @@ export default function WhyChooseUs() {
       <section className="relative overflow-hidden bg-black">
         {/* Background image */}
         <Image
-          src="/images/wp/2018/04/sandhurst-roofing-about-us.jpg"
+          src="/images/wp/2018/10/new-roof-with-gutters-and-downpipes.jpg"
           alt="Roofers working on a roof"
           fill
           className="object-cover opacity-30"

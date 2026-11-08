@@ -6,7 +6,6 @@ import Image from "next/image";
 const serviceLinks = [
   { label: "COLORBOND Roofing", href: "/colorbond-roofing/" },
   { label: "Re-Roofing", href: "/re-roofing/" },
-  { label: "Roof Painting", href: "/roof-painting/" },
   { label: "Flat Metal Roofing", href: "/flat-metal-roofing/" },
   { label: "Guttering", href: "/guttering/" },
   { label: "Tile To Tin", href: "/tile-to-tin-roof/" },

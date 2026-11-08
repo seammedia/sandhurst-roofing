@@ -8,8 +8,8 @@ import ScrollReveal from "./ScrollReveal";
 
 const portfolioImages = [
   {
-    src: "/images/wp/2018/04/Before-and-After1-e1523846046607.jpg",
-    alt: "Before and after roof project 1",
+    src: "/images/wp/2023/03/frankston-re-roof-metal-roofing.jpg",
+    alt: "New COLORBOND steel roof in Frankston",
   },
   {
     src: "/images/wp/2018/04/Roof-replacement-after1-e1523845065441.jpg",
@@ -28,20 +28,20 @@ const portfolioImages = [
     alt: "Reroof Parkdale completed project",
   },
   {
-    src: "/images/wp/2018/04/Before-and-After2-e1523846166898.jpg",
-    alt: "Before and after roof project 2",
+    src: "/images/wp/2022/11/colorbond-roofing-parkdale.jpg",
+    alt: "New COLORBOND steel roof in Parkdale",
   },
   {
-    src: "/images/wp/2018/01/IMG_3474.jpg",
-    alt: "Roofing project in progress",
+    src: "/images/wp/2023/02/re-roof-Narre-Warren-North-3.jpg",
+    alt: "Re-roof in Narre Warren North",
   },
   {
-    src: "/images/wp/2018/07/Roof-replacement-Before-and-After3-e1532574721891.jpg",
-    alt: "Roof replacement before and after",
+    src: "/images/wp/2023/01/colorbond-roofing-in-hastings.png",
+    alt: "COLORBOND steel roofing in Hastings",
   },
   {
-    src: "/images/wp/2018/04/Before-and-After3-e1523846145509.jpg",
-    alt: "Before and after roof project 3",
+    src: "/images/wp/2024/07/roof-replacement-complete-4.jpg",
+    alt: "Completed metal roof replacement",
   },
 ];
 

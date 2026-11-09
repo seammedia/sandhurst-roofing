@@ -43,7 +43,7 @@ const benefits = [
 ];
 
 const signs = [
-  "Rust holes, flaking paint or rust stains down the fascia and walls",
+  "Rust holes, flaking finish or rust stains down the fascia and walls",
   "Gutters sagging or pulling away from the roofline",
   "Water overflowing the front edge every time it rains, even when clear",
   "Cracked or split seams and joints that keep leaking after repair",

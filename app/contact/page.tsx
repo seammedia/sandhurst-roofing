@@ -7,7 +7,7 @@ import { submitContactForm } from "@/app/actions/contact";
 export const metadata: Metadata = {
   title: "Contact Us | Get a Free Roofing Quote",
   description:
-    "Contact Sandhurst Roofing today. For all your roof restoration, repair and replacement needs, call the team at Sandhurst Roofing.",
+    "Contact Sandhurst Roofing today. For all your roof plumbing, re-roofing and COLORBOND roofing needs, call the team at Sandhurst Roofing.",
   alternates: {
     canonical: "/contact/",
   },
@@ -283,10 +283,9 @@ export default function ContactPage() {
                       className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-[#7cda24] focus:outline-none focus:ring-1 focus:ring-[#7cda24]"
                     >
                       <option value="">Select a service</option>
-                      <option value="roof-restoration">Roof Restoration</option>
-                      <option value="roof-repairs">Roof Repairs</option>
+                      <option value="roof-plumbing">Roof Plumbing</option>
                       <option value="re-roofing">Re-Roofing</option>
-                      <option value="roof-painting">Roof Painting</option>
+                      <option value="tile-to-tin-roof">Tile To Tin Roof</option>
                       <option value="guttering">Guttering</option>
                       <option value="colorbond-roofing">
                         Colorbond Roofing

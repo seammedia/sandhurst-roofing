@@ -18,7 +18,7 @@ interface BlogProps {
 }
 
 // Fallback image if a post has no featured image set
-const FALLBACK_IMAGE = "/images/wp/2018/07/Roof-Restoration-pic3-e1532571064655.jpg";
+const FALLBACK_IMAGE = "/images/wp/2020/05/monument-tin-roof-e1590908479834.jpg";
 
 function formatDate(dateStr: string): string {
   // Posts stored as e.g. "2023-10-30 11:32:19" - render as "October 30, 2023"

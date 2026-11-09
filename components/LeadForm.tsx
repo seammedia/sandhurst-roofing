@@ -160,7 +160,7 @@ export default function LeadForm({
             id="message"
             name="message"
             rows={3}
-            placeholder="e.g. tile roof, single storey, gutters overflowing"
+            placeholder="e.g. old tin roof, single storey, gutters overflowing"
             className={inputClass}
           />
         </div>

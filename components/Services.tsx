@@ -11,15 +11,15 @@ const services = [
     title: "ROOF INSTALLATION",
     description:
       "Built strong from the start — because a solid roof starts with a solid install.",
-    image: "/images/wp/2018/07/Roof-Restoration-pic1.jpg",
+    image: "/images/wp/2020/05/monument-tin-roof-e1590908479834.jpg",
     href: "/re-roofing/",
   },
   {
-    title: "ROOF REPAIR",
+    title: "ROOF PLUMBING",
     description:
-      "Leaks, cracks, or storm damage? We patch it up before it gets worse.",
-    image: "/images/wp/2018/07/roof-repairs-pic3.jpg",
-    href: "/roof-repairs/",
+      "Licensed roof plumbers for metal roofs, flashings, valleys and leaks.",
+    image: "/images/wp/2020/01/steep-re-roof-picture-5.jpg",
+    href: "/roof-plumber-melbourne/",
   },
   {
     title: "ROOF REPLACEMENT",
@@ -29,17 +29,18 @@ const services = [
     href: "/re-roofing/",
   },
   {
-    title: "ROOF RESTORATION",
+    title: "COLORBOND® STEEL",
     description:
-      "Bring tired roofs back to life — cleaning, re-bedding, re-pointing, sealing.",
-    image: "/images/wp/2018/07/Roof-Restoration-pic4-e1532571077281.jpg",
-    href: "/roof-restoration/",
+      "Lightweight, long-lasting steel roofing in the full colour range.",
+    image: "/images/wp/2024/07/roof-replacement-complete-4.jpg",
+    href: "/colorbond-roofing/",
   },
   {
-    title: "ROOF PAINTING",
-    description: "It's like sunscreen... but for your roof.",
-    image: "/images/wp/2018/10/roof-painting-and-re-pointing.jpg",
-    href: "/roof-painting/",
+    title: "TILE TO TIN",
+    description:
+      "Swap a heavy old roof for lightweight, low-maintenance metal.",
+    image: "/images/wp/2023/02/Roofing-springvale-south-6.jpg",
+    href: "/tile-to-tin-roof/",
   },
   {
     title: "GUTTERING & PLUMBING",

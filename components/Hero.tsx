@@ -126,7 +126,7 @@ export default function Hero() {
       >
         <Image
           src="/images/hero-aerial-wide.png"
-          alt="Aerial view of a restored grey COLORBOND tile roof by Sandhurst Roofing"
+          alt="Aerial view of a grey COLORBOND steel roof by Sandhurst Roofing"
           width={1600}
           height={600}
           className="h-auto w-full object-cover"

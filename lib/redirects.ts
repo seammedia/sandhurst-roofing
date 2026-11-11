@@ -82,7 +82,7 @@ export const redirectMap: Redirect[] = [
   { source: "/the-role-of-roof-ventilation-why-proper-ventilation-is-essential/", destination: "/blog/the-role-of-roof-ventilation-why-proper-ventilation-is-essential/", permanent: true },
   { source: "/5-warning-signs-you-need-gutter-replacement-in-melbourne/", destination: "/blog/5-warning-signs-you-need-gutter-replacement-in-melbourne/", permanent: true },
   { source: "/how-to-choose-a-reliable-roofing-contractor-key-factors-to-consider/", destination: "/blog/how-to-choose-a-reliable-roofing-contractor-key-factors-to-consider/", permanent: true },
-  { source: "/why-you-should-consider-professional-help-for-your-asbestos-roof-removal/", destination: "/re-roofing/", permanent: true },
+  { source: "/why-you-should-consider-professional-help-for-your-asbestos-roof-removal/", destination: "/blog/why-you-should-consider-professional-help-for-your-asbestos-roof-removal/", permanent: true },
 
   // ===== blog-missing-on-nextjs (pergola post - will become real once added in Task #17) =====
   { source: "/pergola-repairs-or-replacement/", destination: "/pergola/", permanent: true },
@@ -134,9 +134,6 @@ export const redirectMap: Redirect[] = [
   { source: "/blog/roof-leak-repair/", destination: "/roof-plumber-melbourne/", permanent: true },
   { source: "/blog/replace-or-repair-roof/", destination: "/roof-plumber-melbourne/", permanent: true },
 
-  // ===== removed asbestos pages =====
-  { source: "/asbestos-roof-removal-and-replacement/", destination: "/re-roofing/", permanent: true },
-  { source: "/blog/why-you-should-consider-professional-help-for-your-asbestos-roof-removal/", destination: "/re-roofing/", permanent: true },
 
   // ===== removed roof painting page =====
   { source: "/roof-painting/", destination: "/colorbond-roofing/", permanent: true },

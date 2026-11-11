@@ -39,6 +39,10 @@
       "slug": "tile-to-tin-roof"
     },
     {
+      "title": "Asbestos Roof Removal And Replacement",
+      "slug": "asbestos-roof-removal-and-replacement"
+    },
+    {
       "title": "Pergolas & Bali Huts",
       "slug": "pergola"
     }
@@ -330,6 +334,7 @@
     }
   ],
   "blogCategories": [
+    "Asbestos Roof Removal",
     "COLORBOND® steel",
     "Emergency Roofing",
     "Gutter Replacements",
@@ -342,6 +347,6 @@
     "Roofing",
     "Uncategorized"
   ],
-  "postCount": 18,
+  "postCount": 19,
   "pageCount": 116
 }
